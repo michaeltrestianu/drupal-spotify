@@ -1,0 +1,12 @@
+<h2>Artist name: {{ name }}</h2>
+<h3>Id: {{ id }}</h3>
+
+<ul>
+  {% for genre in genres %}
+    <li>{{ genre }}</li>
+  {% endfor %}
+</ul>
+
+{% for image in images %}
+  <img src="{{ file_url(image.url) }}" alt="{{ name }} image" width="{{ image.width }}" height="{{ image.height }}" />
+{% endfor %}

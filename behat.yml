@@ -1,0 +1,22 @@
+default:
+  suites:
+    default:
+      contexts:
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Acceptance\Api\SearchApiContext
+        - Acceptance\Context
+  extensions:
+    Imbo\BehatApiExtension:
+      apiClient:
+        cookies: true
+        verify: false
+        base_uri: http://drupal-spotify.lndo.site
+    Drupal\MinkExtension:
+      goutte: ~
+      base_url: http://drupal-spotify.lndo.site
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drupal'
+      drupal:
+        drupal_root: '/app'

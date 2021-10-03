@@ -1,0 +1,6 @@
+suites:
+  spotify_connect:
+    namespace: Drupal\spotify_connect
+    psr4_prefix: Drupal\spotify_connect
+    src_path: modules/custom/spotify_connect/src
+    spec_path: modules/custom/spotify_connect

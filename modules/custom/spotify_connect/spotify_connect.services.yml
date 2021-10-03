@@ -1,0 +1,16 @@
+services:
+  spotify_connect.artist_block_form.manager:
+    class: Drupal\spotify_connect\Plugin\Block\ArtistsBlockFormManager
+  spotify_connect.artist_link.provider:
+    class: Drupal\spotify_connect\Provider\ArtistLinkProvider
+  spotify_connect.html_artist_list.provider:
+    class: Drupal\spotify_connect\Provider\HtmlArtistListProvider
+    arguments: ['@spotify_connect.artist_link.provider']
+  spotify_connect.artist_json_response_array.provider:
+    class: Drupal\spotify_connect\Provider\ArtistsJsonResponseArrayProvider
+  spotify_connect.factory:
+    class: Drupal\spotify_connect\SpotifyConnectFactory
+    arguments: ['@logger.factory','@tempstore.private','@config.factory']
+  spotify_connect.facade:
+    class: Drupal\spotify_connect\SpotifyConnectFacade
+    arguments: ['@spotify_connect.factory']

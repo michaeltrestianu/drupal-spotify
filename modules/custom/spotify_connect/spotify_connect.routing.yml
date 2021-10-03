@@ -1,0 +1,23 @@
+spotify_connect.admin_settings:
+  path: '/admin/config/development/spotify'
+  defaults:
+    _form: '\Drupal\spotify_connect\Form\SettingsForm'
+    _title: 'Auth settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+spotify_connect.autocomplete.artists:
+  path: '/find-artists'
+  defaults:
+    _controller: '\Drupal\spotify_connect\Controller\FindArtistsController::find'
+    _format: json
+  requirements:
+    _permission: 'administer blocks'
+
+spotify_connect.view.artist:
+  path: '/view-artist/{artist_id}'
+  defaults:
+    _controller: '\Drupal\spotify_connect\Controller\ViewArtistController::view'
+    _title: 'Spotify Artist'
+  requirements:
+    _permission: 'view spotify content'

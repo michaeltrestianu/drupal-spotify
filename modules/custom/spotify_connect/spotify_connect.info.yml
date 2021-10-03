@@ -1,0 +1,5 @@
+name: 'Spotify Connect'
+type: module
+description: 'Connects to spotify api'
+core_version_requirement: ^8 || ^9
+package: 'spotify'
